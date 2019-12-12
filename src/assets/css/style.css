@@ -3,7 +3,7 @@
     background-image: url('../images/bg.jpeg');
 }
 .op{
-    opacity: 0.5;
+    opacity: 0.8;
   filter: alpha(opacity=50);
 }
 .det{
@@ -11,5 +11,20 @@
 }
 .tcloudy{
 background-image: url('../images/scattered_showers_day_night@2x.png');
-style: "width:10%;"
+}
+.t{
+    position: relative;
+    z-index: 1;
+}
+.sbg .t{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:palegoldenrod center center;
+    opacity: .4;
+    width: 100%;
+    height: 100%;
 }
