@@ -1,0 +1,15 @@
+
+.bg{
+    background-image: url('../images/bg.jpeg');
+}
+.op{
+    opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.det{
+    background-image: url('../images/scattered_showers_day_night@2x.png');
+}
+.tcloudy{
+background-image: url('../images/scattered_showers_day_night@2x.png');
+style: "width:10%;"
+}
