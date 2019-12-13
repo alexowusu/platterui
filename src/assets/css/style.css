@@ -1,6 +1,14 @@
 
 .bg{
+    align-items: center;
+    justify-content: center;
+    height: 200vh;
+    width: 10hv;
     background-image: url('../images/bg.jpeg');
+    background-size: cover;
+    background-position: top;
+    opacity: 10;
+    filter: alpha(opacity=50);
 }
 .op{
     opacity: 0.8;
@@ -28,3 +36,4 @@ background-image: url('../images/scattered_showers_day_night@2x.png');
     width: 100%;
     height: 100%;
 }
+
