@@ -1,16 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-image: url('/assets/images/bg4.jpg'); 
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
 font-family: 'Numans', sans-serif;
 }
+body::before{
+    content:'';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/assets/images/bg4.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-size: cover;
+}
 
 .container{
 height: 100%;
 align-content: center;
+margin-left: 100pt;
 }
 
 .card{
