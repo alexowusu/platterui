@@ -3,11 +3,11 @@
     align-items: center;
     justify-content: center;
     height: 250vh;
-    width: 10hv;
+    width: 2hv;
     background-image: url('../images/bg.jpeg');
     background-size: cover;
     background-position: top;
-    opacity: 10;
+    opacity: 1;
     filter: alpha(opacity=50);
 }
 .op{
