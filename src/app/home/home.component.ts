@@ -7,11 +7,10 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  data:object  = {}
   constructor() { }
 
   ngOnInit() {
-    AppComponent.isHidden = true;
   }
 
 }

@@ -14,7 +14,9 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-    AppComponent.isHidden = false; 
+     
   }
-
+toHide(){
+ 
+}
 }

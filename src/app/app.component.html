@@ -6,7 +6,7 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<div class="bg" *ngIf="!isHidden">
+<div class="bg">
 <nav class="navbar op navbar-expand-lg mb-8 navbar-light shadow">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -16,32 +16,11 @@
     <ul class="navbar-nav mr-auto mt-lg-0">
 
            <div class="container">
-            <a class="navbar-brand" href="#">Welcome</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link op" href="#">Home
-                        <span class="sr-only">(current)</span>
+            <a class="navbar-brand">Welcome</a>
+           <span class="navbar-toggler-icon"></span>
+                  <a class="nav-link" href="#">Home
                       </a>
-                </li>
-                <li class="nav-item op">
-                  <a class="nav-link" href="#">Countries</a>
-                </li>
-                <li class="nav-item op">
-                  <a class="nav-link" href="#">Counties</a>
-                </li>
-                <li class="nav-item op">
-                  <a class="nav-link" href="#">Cities</a>
-                </li>
-                <li>
-                  
-                </li>
-              </ul>
             </div>
-          </div>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -54,54 +33,57 @@
   <div>
   <!-- Sidebar  -->
   <nav id="sidebar" class="op">
-      <div class="sidebar-header">
+      <div class="sidebar-header bac">
           <h3>Platter</h3>
           <strong>BS</strong>
       </div>
 
-      <ul class="list-unstyled components op">
+      <ul class="list-unstyled components op bac">
           <li class="active">
               <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                  <i class="fas fa-home"></i>
-                  Home
+                  <i class="fas fa-street-view"></i>
+                    Find
               </a>
               <ul class="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                      <a href="#">Home 1</a>
+                      <a href="#">Country</a>
                   </li>
                   <li>
-                      <a href="#">Home 2</a>
+                      <a href="#">County</a>
                   </li>
                   <li>
-                      <a href="#">Home 3</a>
+                      <a href="#">City</a>
                   </li>
               </ul>
           </li>
           <li>
               <a href="#">
                   <i class="fas fa-briefcase"></i>
-                  Register
+                  Help tools
               </a>
               <a href= "#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                  <i class="fas fa-copy"></i>
-                  Pages
+                  <i class="fas fa-address-book"></i>
+                  Team ADEPa
               </a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                   <li>
-                      <a href="#">Page 1</a>
+                      <a href="#">Alex</a>
                   </li>
                   <li>
-                      <a href="#">Page 2</a>
+                      <a [routerLink]="['/https://www.linkedin.com/in/dawud-ibrahim-ismail-96378713a/']" routerLinkActive="router-link-active" >Dawud</a>
                   </li>
                   <li>
-                      <a href="#">Page 3</a>
+                      <a href="#">Erbynn</a>
                   </li>
+                  <li>
+                    <a href="#">Patricia</a>
+                </li>
               </ul>
           </li>
           <li>
               <a href="#">
-                  <i class="fas fa-image"></i>
-                  Portfolio
+                  <i class="fas fa-podcast"></i>
+                  Subscribe
               </a>
           </li>
           <li>
