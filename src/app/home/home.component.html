@@ -1,9 +1,11 @@
 <div class="col">
   <div class="grid-auto-rows: auto; col mb-10">
-    <div><h1>Accra</h1></div>
-    <div><h3>Ghana</h3></div>
+    <div><h1><p> {{ weather.name }} </p></h1></div>
+
+    <!-- <div><h3>Ghana</h3></div> -->
     <div><h6><p>Please eat before you sleep tonight</p></h6></div>
-    <div><h1><i class="fas fa-thermometer-half"></i>40%</h1></div>
+    <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ weather.periods[0].reading.temperature }} °C</h1></div>
+    <!-- <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ mock.periods[0].reading.temperature }} °C</h1></div> -->
     <div><h6><p><i>Pick your umbrella</i></p></h6></div>
     <div><h6>There will be heavy rainfall from dawn to evening.</h6></div>
     <div><h6><p>View map for location</p></h6></div>
@@ -11,7 +13,7 @@
   <div class="col">
     <!--Google map-->
   <div id="map-container-google-3" class="z-depth-1-half map-container-3">
-    <iframe src="https://maps.google.com/maps?q=warsaw&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    <iframe src="https://maps.google.com/maps?q=Pembrey Sands&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
       style="border:0" allowfullscreen></iframe>
   </div>
   </div>
@@ -26,6 +28,12 @@
               <i class=""></i> Forecast</h5>
             <hr class="hr-light">
           </div>
+    
+            <!-- <div>
+              <div>{{weather.periods[0].reading.weatherType}}</div>
+            </div> -->
+    
+          
           <table class="table">
               <thead>
                   <th>Time</th>
@@ -35,69 +43,96 @@
                   <th>Feels Like</th>
                 </thead>
               <tbody>
-                <tr>
+                  <tr *ngFor = "let data of weather.periods; let serial = index;">
+                      <th scope="row">{{data?.timestamp}}</th>
+                      <!-- <td><img style="height: 50%; width: 30%;" 
+                        class="img-responsive" src="/assets/images/fair_night@2x.png" 
+                        alt="RaraS">{{ data.reading.weatherType }}</td> -->
+                        <div [ngSwitch]="weather.periods[serial].reading.weatherType">
+                            <td *ngSwitchCase=0>Clear night</td>
+                            <td *ngSwitchCase=1>Sunny day</td>
+                            <td *ngSwitchCase=2>Partly cloudy (night)</td>
+                            <td *ngSwitchCase=3>Partly cloudy (day)</td>
+                            <td *ngSwitchCase=5>Mist</td>
+                            <td *ngSwitchCase=6>Fog</td>
+                            <td *ngSwitchCase=7>Cloudy</td>
+                            <td *ngSwitchCase=8>Overcast</td>
+                            <td *ngSwitchCase=12>Light rain</td>
+                            <td *ngSwitchCase=12>Heavy rain shower (night)</td>                            
+                        
+                        </div>
+                        <!-- <td><img style="height: 50%; width: 30%;" 
+                          class="img-responsive" src="/assets/images/fair_night@2x.png" 
+                          alt="RaraS" *ngIf="data.reading.weatherType <= 6"> Cloudy
+                        </td> -->
+                      <td>{{data?.reading.temperature}}</td>
+                      <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_40@2x.png" alt="">{{ data.reading.precipitationProb }}</td>
+                      <td>{{data.reading.feelsGoodTemp}}</td>
+                    </tr>
+
+                <!-- <tr>
                   <th scope="row">12:00am</th>
                   <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/fair_night@2x.png" alt="RaraS"></td>
                   <td>30&</td>
                   <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_40@2x.png" alt="">40%</td>
                   <td>30%</td>
-                </tr>
-                <tr>
+                </tr> -->
+                <!-- <tr>
                   <th scope="row">03:00am</th>
                   <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/mostly_cloudy_day_night@2x (1).png" alt="RaraS"></td>
                   <td>30&</td>
                   <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_40@2x.png" alt="">40%</td>
                   <td>46</td>
-                </tr>
-                <tr>
+                </tr> -->
+                <!-- <tr>
                   <th scope="row">06:00am</th>
                   <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/partly_cloudy_day@2x.png" alt="RaraS"></td>
                   <td>30&</td>
                   <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_60@2x.png" alt="">60%</td>
                   <td>50miles</td>
-                </tr>
-                <tr>
+                </tr> -->
+                <!-- <tr>
                   <th scope="row">09:00am</th>
                   <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/clear_day@2x.png" alt="RaraS"></td>
                   <td>30&</td>
                   <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_40@2x.png" alt="">40%</td>
                   <td>Low</td>
-                </tr>
-                <tr>
+                </tr> -->
+                <!-- <tr>
                     <th scope="row">12:00pm</th>
                     <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/fair_night@2x.png" alt="RaraS"></td>
                     <td>30&</td>
                     <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_70@2x.png" alt="">70%</td>
                     <td>Low</td>
-                  </tr>
-                  <tr>
+                  </tr> -->
+                  <!-- <tr>
                       <th scope="row">03:00pm</th>
                       <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/partly_cloudy_day@2x.png" alt="RaraS"></td>
                       <td>30&</td>
                       <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_60@2x.png" alt="">60%</td>
                       <td>Low</td>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <th scope="row">06:00pm</th>
                         <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/clear_day@2x.png" alt="RaraS"></td>
                         <td>30&</td>
                         <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_0@2x.png" alt="">0%</td>
                         <td>Low</td>
-                      </tr>
-                      <tr>
+                      </tr> -->
+                      <!-- <tr>
                           <th scope="row">09:00pm</th>
                           <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/rain_day_night@2x.png" alt="RaraS"></td>
                           <td>30&</td>
                           <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_70@2x.png" alt="">70%</td>
                           <td>Low</td>
-                        </tr>
-                        <tr>
+                        </tr> -->
+                        <!-- <tr>
                             <th scope="row">12:00am</th>
                             <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/mostly_cloudy_day_night@2x (1).png" alt="RaraS"></td>
                             <td>30&</td>
                             <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_60@2x.png" alt="">60%</td>
                             <td>Low</td>
-                          </tr>
+                          </tr> -->
               </tbody>
             </table>
         </div>
@@ -129,19 +164,27 @@
                       <tbody>
                         <tr>
                           <th scope="row">Humidity</th>
-                          <td>30%</td>
+                          <td>  {{ weather.periods[0].reading.humidity }}%  </td>
                         </tr>
                         <tr>
                           <th scope="row">Feels like</th>
-                          <td>46</td>
+                          <td> {{ weather.periods[0].reading.feelsGoodTemp }} </td>
                         </tr>
                         <tr>
                           <th scope="row">Visibility</th>
-                          <td>50miles</td>
+                          <div [ngSwitch]="weather.periods[0].reading.visibility">
+                              <td *ngSwitchCase="'MO'">Moderate</td>
+                              <td *ngSwitchCase="'UN'">Sunny day</td>
+                              <td *ngSwitchCase="'VP'">Very Poor</td>
+                              <td *ngSwitchCase="'GO'">Good</td>
+                              <td *ngSwitchCase="'VG'">Very Good</td>
+                              <td *ngSwitchCase="'EX'">Excellent</td>
+                            </div>
+                          <!-- <td> {{ weather.periods[0].reading.visibility }} </td> -->
                         </tr>
                         <tr>
                           <th scope="row">UV Index</th>
-                          <td>Low</td>
+                          <td> {{ weather.periods[0].reading.MaxUVIndex }} </td>
                         </tr>
                       </tbody>
                     </table>
@@ -153,7 +196,7 @@
             <table class="table">
                 <tbody>
                   <tr>
-                    rfdghk dgfh fghgjuhmb 
+                    live data 
                   </tr>
                   </tbody>
                   </table>
@@ -184,15 +227,15 @@
                     <tbody>
                       <tr>
                         <th scope="row">Wind Direction</th>
-                        <td>North</td>
+                        <td> {{ weather.periods[0].reading.windDirection }} </td>
                       </tr>
                       <tr>
                         <th scope="row">Wind Gust</th>
-                        <td>Fairly Good</td>
+                        <td>  {{ weather.periods[0].reading.windGust }} Fairly Good</td>
                       </tr>
                       <tr>
                         <th scope="row">Wind Speed</th>
-                        <td>30*</td>
+                        <td> {{ weather.periods[0].reading.windSpeed }} kmph</td>
                       </tr>
                     </tbody>
                   </table>

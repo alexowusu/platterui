@@ -10,5 +10,6 @@ import { NgIf } from '@angular/common';
 export class AppComponent {
   title = 'platter';
   static isHidden: boolean = true;
+  data: object = { name: 'dawud'};
 
 }
