@@ -9,6 +9,6 @@ import { NgIf } from '@angular/common';
 })
 export class AppComponent {
   title = 'platter';
-  static isHidden: boolean = true;
+  static isHidden: boolean = false;
 
 }

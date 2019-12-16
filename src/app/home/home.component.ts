@@ -11,6 +11,11 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.hide();
   }
 
+
+  private hide() {
+    AppComponent.isHidden = false;
+  }
 }

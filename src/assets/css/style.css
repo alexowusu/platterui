@@ -3,13 +3,11 @@
     align-items: center;
     justify-content: center;
     object-fit: cover; 
-    width: 1300px;
+    width: 2000px;
     height: 1500px;
     background-image: url('../images/bg14.jpg');
     background-size: cover;
     background-position: center;
-    /* opacity: 1;
-    filter: alpha(opacity=50); */
 }
 .op{
     opacity: 0.8;
