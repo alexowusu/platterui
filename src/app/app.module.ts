@@ -15,6 +15,7 @@ import {
   MatIconModule,
   MatButtonModule,
   MatCardModule } from '@angular/material';
+
 const config = new AuthServiceConfig([
   {
     id: FacebookLoginProvider.PROVIDER_ID,
@@ -32,6 +33,7 @@ export function provideConfig() {
     HomeComponent,
     RegisterComponent,
     LoginComponent,
+  
     // ToasterServiceService
   ],
   imports: [

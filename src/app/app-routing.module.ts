@@ -10,7 +10,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   // To redirect the app to automatically launch from the login page
-  {path: '', redirectTo: "/login", pathMatch: "full"}
+  {path: '', redirectTo: "/login", pathMatch: "full"},
+  
 ];
 
 @NgModule({
