@@ -162,7 +162,13 @@
             <div class="card wow fadeInRight bg-transparent" data-wow-delay="0.3s">
       <div class="container">
           <div class="row col">
-              <div class="col-5"><img style="width: 100%;" src="/assets/images/weather.jpg" alt="rg"></div>
+              <div class="col-5">
+                  <div [ngSwitch]="weather.periods[0].reading.weatherType">
+                      <div *ngSwitchCase="7"><img style="width: 100%;" src="/assets/images/mostly_cloudy_day_night.png" alt="rg"></div>
+                      <div *ngSwitchCase="5"><img style="width: 100%;" src="/assets/images/partly_cloudy_day.png" alt="rg"></div>
+                      <div *ngSwitchCase="6"><img style="width: 100%;" src="/assets/images/fair_night.png" alt="rg"></div>
+                  </div>
+              </div>
               <div class="col-4">
                   <table class="table  row-8">
                       <tbody>
