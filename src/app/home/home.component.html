@@ -5,7 +5,7 @@
     <div><h1><p> {{ weather.name }} </p></h1></div>
 
     <!-- <div><h3>Ghana</h3></div> -->
-    <div><h6><p>Please eat before you sleep tonight</p></h6></div>
+    <div><h6><p>Please eat before you sleep tonight..</p></h6></div>
     <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ weather.periods[0].reading.temperature }} °C</h1></div>
     <!-- <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ mock.periods[0].reading.temperature }} °C</h1></div> -->
 
@@ -18,7 +18,7 @@
   </div>
 </div>
   <div class="col-5">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.553793177251!2d-0.23769099999999996!3d5.6326808999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9954d603e5b3%3A0xd24eb41c04c54f63!2sturntabl!5e0!3m2!1sen!2sgh!4v1576499402655!5m2!1sen!2sgh" width="350" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      <iframe src="https://maps.google.com/maps?q=accra&t=k&z=13&ie=UTF8&iwloc=&output=embed" width="350" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
   </div>
   <div class=" col-6" style="margin-top: 20px; display: flex;flex-direction: row;">
       <div class="grid-auto-rows: auto;">
@@ -42,12 +42,12 @@
                   <th>Time</th>
                   <th>Weather</th>
                   <th>Temp(°C)</th>
-                  <th>Prec.</th>
+                  <th>Prec.(&#37;)</th>
                   <th>Feels Like(°C)</th>
                 </thead>
               <tbody>
-                  <tr *ngFor = "let data of weather.periods; let serial = index;">
-                      <th scope="row">{{data?.timestamp}}</th>
+                  <tr *ngFor = "let data of weather.periods; let serial = index;  ">
+                      <th scope="row">{{data?.timestamp | slice:11:16}}</th>
                       <!-- <td><img style="height: 50%; width: 30%;" 
                         class="img-responsive" src="/assets/images/fair_night@2x.png" 
                         alt="RaraS">{{ data.reading.weatherType }}</td> -->
@@ -62,7 +62,7 @@
                             <td *ngSwitchCase=7>Cloudy</td>
                             <td *ngSwitchCase=8>Overcast</td>
                             <td *ngSwitchCase=12>Light rain</td>
-                            <td *ngSwitchCase=12>Heavy rain shower (night)</td>                            
+                            <td *ngSwitchCase=13>Heavy rain shower (night)</td>                            
                         
                         </div>
                         <!-- <td><img style="height: 50%; width: 30%;" 
@@ -73,70 +73,6 @@
                       <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_40@2x.png" alt="">{{ data.reading.precipitationProb }}</td>
                       <td>{{data.reading.feelsGoodTemp}}</td>
                     </tr>
-
-                <!-- <tr>
-                  <th scope="row">12:00am</th>
-                  <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/fair_night@2x.png" alt="RaraS"></td>
-                  <td>30&</td>
-                  <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_40@2x.png" alt="">40%</td>
-                  <td>30%</td>
-                </tr> -->
-                <!-- <tr>
-                  <th scope="row">03:00am</th>
-                  <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/mostly_cloudy_day_night@2x (1).png" alt="RaraS"></td>
-                  <td>30&</td>
-                  <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_40@2x.png" alt="">40%</td>
-                  <td>46</td>
-                </tr> -->
-                <!-- <tr>
-                  <th scope="row">06:00am</th>
-                  <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/partly_cloudy_day@2x.png" alt="RaraS"></td>
-                  <td>30&</td>
-                  <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_60@2x.png" alt="">60%</td>
-                  <td>50miles</td>
-                </tr> -->
-                <!-- <tr>
-                  <th scope="row">09:00am</th>
-                  <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/clear_day@2x.png" alt="RaraS"></td>
-                  <td>30&</td>
-                  <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_40@2x.png" alt="">40%</td>
-                  <td>Low</td>
-                </tr> -->
-                <!-- <tr>
-                    <th scope="row">12:00pm</th>
-                    <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/fair_night@2x.png" alt="RaraS"></td>
-                    <td>30&</td>
-                    <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_70@2x.png" alt="">70%</td>
-                    <td>Low</td>
-                  </tr> -->
-                  <!-- <tr>
-                      <th scope="row">03:00pm</th>
-                      <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/partly_cloudy_day@2x.png" alt="RaraS"></td>
-                      <td>30&</td>
-                      <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_60@2x.png" alt="">60%</td>
-                      <td>Low</td>
-                    </tr> -->
-                    <!-- <tr>
-                        <th scope="row">06:00pm</th>
-                        <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/clear_day@2x.png" alt="RaraS"></td>
-                        <td>30&</td>
-                        <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_0@2x.png" alt="">0%</td>
-                        <td>Low</td>
-                      </tr> -->
-                      <!-- <tr>
-                          <th scope="row">09:00pm</th>
-                          <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/rain_day_night@2x.png" alt="RaraS"></td>
-                          <td>30&</td>
-                          <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_70@2x.png" alt="">70%</td>
-                          <td>Low</td>
-                        </tr> -->
-                        <!-- <tr>
-                            <th scope="row">12:00am</th>
-                            <td><img style="height: 50%; width: 30%;" class="img-responsive" src="/assets/images/mostly_cloudy_day_night@2x (1).png" alt="RaraS"></td>
-                            <td>30&</td>
-                            <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_60@2x.png" alt="">60%</td>
-                            <td>Low</td>
-                          </tr> -->
               </tbody>
             </table>
         </div>

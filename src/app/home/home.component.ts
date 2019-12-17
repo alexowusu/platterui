@@ -25,13 +25,17 @@ export class HomeComponent implements OnInit {
   //     {"timestamp":"2019-12-17T09:00:00Z","reading":{"temperature":"5","feelsGoodTemp":"3","humidity":"98","MaxUVIndex":"1","precipitationProb":"45","visibility":"MO","weatherType":"12","windDirection":"NNW","windGust":"9","windSpeed":"4"}},{"timestamp":"2019-12-17T12:00:00Z","reading":{"temperature":"5","feelsGoodTemp":"3","humidity":"96","MaxUVIndex":"1","precipitationProb":"49","visibility":"PO","weatherType":"12","windDirection":"NW","windGust":"11","windSpeed":"4"}},{"timestamp":"2019-12-17T15:00:00Z","reading":{"temperature":"6","feelsGoodTemp":"3","humidity":"94","MaxUVIndex":"1","precipitationProb":"14","visibility":"GO","weatherType":"7","windDirection":"W","windGust":"9","windSpeed":"4"}},{"timestamp":"2019-12-17T18:00:00Z","reading":{"temperature":"4","feelsGoodTemp":"1","humidity":"97","MaxUVIndex":"0","precipitationProb":"12","visibility":"MO","weatherType":"7","windDirection":"SW","windGust":"11","windSpeed":"4"}},{"timestamp":"2019-12-17T21:00:00Z","reading":{"temperature":"4","feelsGoodTemp":"0","humidity":"96","MaxUVIndex":"0","precipitationProb":"5","visibility":"GO","weatherType":"2","windDirection":"SW","windGust":"13","windSpeed":"4"}}],"dataDate":"2019-12-16T13:00:00Z","country":"ENGLAND","summary":{"temp":5.125,"humidity":96.875,"windSpeed":3.75}}
 
       // location = "Pembrey Sands"
-  mapUrl = "https://maps.google.com/maps?q="+ this.weather["name"] +"&t=k&z=13&ie=UTF8&iwloc=&output=embed";
+      // this.weather["name"]
+
 
   constructor(private service:HomeService, private toasterService: ToasterServiceService) { }
 
   name:string;
   weatherStatus: string;
   msg:string = "Raining @ " + name;
+  // map: string = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.553793177251!2d-0.23769099999999996!3d5.6326808999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9954d603e5b3%3A0xd24eb41c04c54f63!2sturntabl!5e0!3m2!1sen!2sgh!4v1576499402655!5m2!1sen!2sgh"
+  mapUrl = "https://maps.google.com/maps?q=accra&t=k&z=13&ie=UTF8&iwloc=&output=embed";
+
 
   ngOnInit() {
     this.service.getData().subscribe(
