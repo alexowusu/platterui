@@ -1,3 +1,4 @@
+// import { ToasterService } from './services/toaster-service.service';
 import { Component } from '@angular/core';
 import { NgIf } from '@angular/common';
 
@@ -12,4 +13,7 @@ export class AppComponent {
   static isHidden: boolean = true;
   data: object = { name: 'dawud'};
 
+  // constructor(private toasterService: ToasterService){
+    
+  // }
 }
