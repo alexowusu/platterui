@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { LoginComponent } from "./login/login.component"; 
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,9 @@ import { NgIf } from '@angular/common';
 export class AppComponent {
   title = 'platter';
   static isHidden: boolean = false;
-
+  data: object = { name: 'dawud'};
+  
+  ngOnInit() {
+    LoginComponent.loggedIn;
+  }
 }

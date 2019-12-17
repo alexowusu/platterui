@@ -26,7 +26,7 @@ margin-left: 100pt;
 }
 
 .card{
-height: 370px;
+height: 400px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
@@ -98,3 +98,27 @@ color: white;
 margin-left: 4px;
 }
 
+
+ .example-container {
+    position: relative;
+    padding: 5px;
+    background-color: aqua;
+  }
+  
+  .example-loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-card {
+    margin: 5px;
+    padding-bottom: 40px;
+  }
