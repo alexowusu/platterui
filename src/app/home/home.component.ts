@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   constructor(private service:HomeService, private toasterService: ToasterServiceService) { }
 
   name:string;
+  weatherStatus: string;
   msg:string = "Raining @ " + name;
 
   ngOnInit() {
@@ -35,19 +36,20 @@ export class HomeComponent implements OnInit {
       result => {
           this.weather = result;
           console.log(result);
-          this.name = this.weather["name"]
+          this.name = this.weather["name"];
+          // this.weatherStatus = this.weather["periods[0]"["reading"["weatherType"]]];
+          // this.weatherStatus = this.weather[name];
+          console.log("herreeee " + this.name); 
       },
       error => { console.log(error); }
-      
     );
-    console.log("herreeee" + this.weather);
 
     this.Info(this.msg);
   }
 
 
   Info(msg: string){
-    this.toasterService.Info("Condition", msg);
+    this.toasterService.Info("Info", msg);
   }
 
   // Success(){
