@@ -5,10 +5,12 @@
 			<div class="card-header">
 				<h3>Log In</h3>
 				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i  class="fab fa-github-square"></i></span>
+					<span><i (click)="signInWithFB()" class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
 					<span><i class="fab fa-twitter-square"></i></span>
 				</div>
+				<div class="text-light"><h6 *ngIf="loggedIn===true">Welcome {{user.firstName}}  <img mat-card-image [src]="user.photoUrl" style="width: 40px;" alt="My Facebook Photo"></h6></div>
 			</div>
 			<div class="card-body">
 				<form>
@@ -17,7 +19,6 @@
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
 						<input type="text" class="form-control" placeholder="username">
-						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
@@ -29,7 +30,7 @@
 						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Login" [routerLink]="['/home']" routerLinkActive="router-link-active"  class="btn float-right login_btn">
+						<input type="submit" value="Login"  *ngIf="loggedIn===true" [routerLink]="['/home']" routerLinkActive="router-link-active"  class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
