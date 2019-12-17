@@ -1,3 +1,4 @@
+import { ToasterServiceService } from './services/toaster-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,12 +9,14 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import{HttpClientModule} from '@angular/common/http'
 import { HomeService } from './home.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    // ToasterServiceService
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { HomeService } from './home.service';
     HttpClientModule
   ],
   providers: [
-    HomeService
+    HomeService,
+    ToasterServiceService
   ],
   bootstrap: [AppComponent]
   

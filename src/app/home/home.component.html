@@ -9,6 +9,9 @@
     <div><h6><p>Pick your umbrella</p></h6></div>
     <!-- <div><h6>There will be heavy rainfall from dawn to evening.</h6></div> -->
     <div><h6><p>View map for location</p></h6></div>
+
+    <!-- <button type="button" class="btn btn-outline-success" (click)="Info(msg)">Trigger</button> -->
+
   </div>
   <div class="col">
     <!--Google map-->
@@ -38,9 +41,9 @@
               <thead>
                   <th>Time</th>
                   <th>Weather</th>
-                  <th>Temp</th>
+                  <th>Temp(°C)</th>
                   <th>Prec.</th>
-                  <th>Feels Like</th>
+                  <th>Feels Like(°C)</th>
                 </thead>
               <tbody>
                   <tr *ngFor = "let data of weather.periods; let serial = index;">
@@ -48,7 +51,7 @@
                       <!-- <td><img style="height: 50%; width: 30%;" 
                         class="img-responsive" src="/assets/images/fair_night@2x.png" 
                         alt="RaraS">{{ data.reading.weatherType }}</td> -->
-                        <div [ngSwitch]="weather.periods[serial].reading.weatherType">
+                        <div [ngSwitch]="weather.periods[serial]?.reading.weatherType">
                             <td *ngSwitchCase=0>Clear night</td>
                             <td *ngSwitchCase=1>Sunny day</td>
                             <td *ngSwitchCase=2>Partly cloudy (night)</td>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { HomeService } from '../home.service';
+import { ToasterServiceService } from '../services/toaster-service.service';
 
 @Component({
   selector: 'app-home',
@@ -23,22 +24,35 @@ export class HomeComponent implements OnInit {
 
       // location = "Pembrey Sands"
   mapUrl = "https://maps.google.com/maps?q="+ this.weather["name"] +"&t=k&z=13&ie=UTF8&iwloc=&output=embed";
-  constructor(private service:HomeService) { }
+
+  constructor(private service:HomeService, private toasterService: ToasterServiceService) { }
+
+  name:string;
+  msg:string = "Raining @ " + name;
 
   ngOnInit() {
     this.service.getData().subscribe(
       result => {
           this.weather = result;
           console.log(result);
+          this.name = this.weather["name"]
       },
       error => { console.log(error); }
       
     );
     console.log("herreeee" + this.weather);
-    // console.log(this.weather["name"]);
 
-
-
+    this.Info(this.msg);
   }
+
+
+  Info(msg: string){
+    this.toasterService.Info("Condition", msg);
+  }
+
+  // Success(){
+  //   this.toasterService.Success("title", "message");
+  // }
+
 
 }
