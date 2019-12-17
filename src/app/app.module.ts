@@ -1,3 +1,4 @@
+import { ToasterServiceService } from './services/toaster-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider, GoogleLoginProvider } from 'angularx-social-login';
@@ -6,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+
 import{HttpClientModule} from '@angular/common/http';
 import { HomeService } from './home.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +22,7 @@ const config = new AuthServiceConfig([
   }
 ]);
 
+
 export function provideConfig() {
   return config;
 }
@@ -28,7 +31,8 @@ export function provideConfig() {
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    // ToasterServiceService
   ],
   imports: [
     BrowserModule,
@@ -45,8 +49,10 @@ export function provideConfig() {
     {
     provide: AuthServiceConfig,
     useFactory: provideConfig
-    }
+    },
+    ToasterServiceService
   ],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
