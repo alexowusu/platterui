@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { LoginComponent } from '../login/login.component';
 import { HomeService } from '../home.service';
 import { ToasterServiceService } from '../services/toaster-service.service';
 
@@ -10,6 +11,7 @@ import { ToasterServiceService } from '../services/toaster-service.service';
 })
 export class HomeComponent implements OnInit {
   weather:object  = {}
+
   // mock: object = 
   // {"elevation":"204.0",
   // "locationId":"3660","latitude":"51.68",
@@ -36,6 +38,7 @@ export class HomeComponent implements OnInit {
       result => {
           this.weather = result;
           console.log(result);
+        
           this.name = this.weather["name"];
           // this.weatherStatus = this.weather["periods[0]"["reading"["weatherType"]]];
           // this.weatherStatus = this.weather[name];
@@ -43,11 +46,14 @@ export class HomeComponent implements OnInit {
       },
       error => { console.log(error); }
     );
-
+    this.hide();
+    LoginComponent.loggedIn;
     this.Info(this.msg);
   }
-
-
+  
+   private hide() {
+     AppComponent.isHidden = false;
+  }
   Info(msg: string){
     this.toasterService.Info("Info", msg);
   }
@@ -55,6 +61,5 @@ export class HomeComponent implements OnInit {
   // Success(){
   //   this.toasterService.Success("title", "message");
   // }
-
 
 }

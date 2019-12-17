@@ -1,6 +1,7 @@
 // import { ToasterService } from './services/toaster-service.service';
 import { Component } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { LoginComponent } from "./login/login.component"; 
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,12 @@ import { NgIf } from '@angular/common';
 })
 export class AppComponent {
   title = 'platter';
-  static isHidden: boolean = true;
-  data: object = { name: 'dawud'};
 
-  // constructor(private toasterService: ToasterService){
-    
-  // }
+  static isHidden: boolean = false;
+  data: object = { name: 'dawud'};
+  
+  ngOnInit() {
+    LoginComponent.loggedIn;
+  }
+
 }
