@@ -7,117 +7,124 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- <div class="bg"> -->
-    <div [ngSwitch]="weather.periods[serial]?.reading.weatherType">
-        <!-- <div *ngSwitchCase=7 style="background-image: url('../assets/images/cloudy.jpg');">
-                fsdhjhgsdgfshdhfshfgshgfhsdfhhgshgfdhgshhdghshsghfshghdgfh
-                <p>dgsjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-                    hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p>
-            </div> -->
-    <!-- </div> 
-    </div> -->
-<nav class="navbar op navbar-expand-lg mb-8 navbar-light shadow"><div><h2>Welcome <span *ngIf="loggedIn===true">{{user.firstName}} {{user.lastName}}, </span></h2></div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <!-- <a class="navbar-brand" href="#">Welcome</a> -->
-    <ul class="navbar-nav mr-auto mt-lg-0">
+    <div [ngSwitch]="weather.periods[0]?.reading.weatherType">
+        <div *ngSwitchCase="7">
+            <div style="background: url('../assets/images/cloudy.jpg');">
+                <!-- content start -->
 
-           <div class="container">
-            <a class="navbar-brand">Welcome</a>
-           <span class="navbar-toggler-icon"></span>
-                  <a class="nav-link" href="#">Home
-                      </a>
-            </div>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" ng-click="getData()" routerLink="home">Search</button>
-    </form>
-  </div>
-</nav>
+            
+                <nav class="navbar op navbar-expand-lg mb-8 navbar-light shadow"><div><h2>Welcome <span *ngIf="loggedIn===true">{{user.firstName}} {{user.lastName}}, </span></h2></div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                      <!-- <a class="navbar-brand" href="#">Welcome</a> -->
+                      <ul class="navbar-nav mr-auto mt-lg-0">
+                  
+                             <div class="container">
+                              <a class="navbar-brand">Welcome</a>
+                             <span class="navbar-toggler-icon"></span>
+                                    <a class="nav-link" href="#">Home
+                                        </a>
+                              </div>
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" ng-click="getData()" routerLink="home">Search</button>
+                      </form>
+                    </div>
+                  </nav>
+                  
+                  <div class="wrapper col">
+                    <div >
+                    <!-- Sidebar  -->
+                    <nav id="sidebar" class="op">
+                        <div class="sidebar-header bac">
+                            <h3>Platter</h3>
+                            <strong>BS</strong>
+                        </div>
+                  
+                        <ul class="list-unstyled components op bac">
+                            <li class="active">
+                                   <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                    <i class="fas fa-street-view"></i>
+                                      Find
+                                </a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                    <li>
+                                        <a href="#">Country</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">County</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">City</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-briefcase"></i>
+                                    Help tools
+                                </a>
+                                <a href= "#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                    <i class="fas fa-address-book"></i>
+                                    Team ADEPa
+                                </a>
+                                <ul class="collapse list-unstyled" id="pageSubmenu">
+                                    <li>
+                                        <a href="#">Alex</a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/https://www.linkedin.com/in/dawud-ibrahim-ismail-96378713a/']" routerLinkActive="router-link-active" >Dawud</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Erbynn</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Patricia</a>
+                                  </li>
+                                </ul>
+                            </li>
+                             <li> 
+                                <a href="#">
+                                    <i class="fas fa-podcast"></i>
+                                    Subscribe
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-question"></i>
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                  
+                       <ul class="list-unstyled CTAs"> 
+                            <li>
+                                <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download latest update</a>
+                            </li>
+                            <li>
+                                <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Map</a>
+                            </li>
+                        </ul> 
+                    </nav>
+                  </div>
+                  
+                  <router-outlet></router-outlet>
 
-<div class="wrapper col">
-  <div >
-  <!-- Sidebar  -->
-  <nav id="sidebar" class="op">
-      <div class="sidebar-header bac">
-          <h3>Platter</h3>
-          <strong>BS</strong>
-      </div>
+                <!-- content end -->
+            </div>       
+        </div>
+            
+    </div> 
 
-      <ul class="list-unstyled components op bac">
-          <li class="active">
-                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                  <i class="fas fa-street-view"></i>
-                    Find
-              </a>
-              <ul class="collapse list-unstyled" id="homeSubmenu">
-                  <li>
-                      <a href="#">Country</a>
-                  </li>
-                  <li>
-                      <a href="#">County</a>
-                  </li>
-                  <li>
-                      <a href="#">City</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-              <a href="#">
-                  <i class="fas fa-briefcase"></i>
-                  Help tools
-              </a>
-              <a href= "#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                  <i class="fas fa-address-book"></i>
-                  Team ADEPa
-              </a>
-              <ul class="collapse list-unstyled" id="pageSubmenu">
-                  <li>
-                      <a href="#">Alex</a>
-                  </li>
-                  <li>
-                      <a [routerLink]="['/https://www.linkedin.com/in/dawud-ibrahim-ismail-96378713a/']" routerLinkActive="router-link-active" >Dawud</a>
-                  </li>
-                  <li>
-                      <a href="#">Erbynn</a>
-                  </li>
-                  <li>
-                    <a href="#">Patricia</a>
-                </li>
-              </ul>
-          </li>
-           <li> 
-              <a href="#">
-                  <i class="fas fa-podcast"></i>
-                  Subscribe
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <i class="fas fa-question"></i>
-                  FAQ
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <i class="fas fa-paper-plane"></i>
-                  Contact
-              </a>
-          </li>
-      </ul>
-
-     <ul class="list-unstyled CTAs"> 
-          <li>
-              <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download latest update</a>
-          </li>
-          <li>
-              <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Map</a>
-          </li>
-      </ul> 
-  </nav>
-</div>
 
 
 
@@ -133,4 +140,3 @@
 
 
 
-<router-outlet></router-outlet>
