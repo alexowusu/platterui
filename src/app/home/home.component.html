@@ -6,7 +6,7 @@
 
     <!-- <div><h3>Ghana</h3></div> -->
     <div><h6><p>Please eat before you sleep tonight</p></h6></div>
-    <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ weather.periods[0].reading.temperature }} °C</h1></div>
+    <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ weather.periods[1].reading.temperature }} °C</h1></div>
     <!-- <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ mock.periods[0].reading.temperature }} °C</h1></div> -->
 
     <div><h6><p>Pick your umbrella</p></h6></div>
@@ -54,15 +54,15 @@
 
                         <div [ngSwitch]="weather.periods[serial]?.reading.weatherType">
                             <td *ngSwitchCase=0>Clear night</td>
-                            <td *ngSwitchCase=1>Sunny day</td>
-                            <td *ngSwitchCase=2>Partly cloudy (night)</td>
-                            <td *ngSwitchCase=3>Partly cloudy (day)</td>
+                            <td *ngSwitchCase=1><img style="width: 100%;" src="/assets/images/clear_day.png" alt="rg"></td>
+                            <td *ngSwitchCase=2><img style="width: 100%;" src="/assets/images/partly_cloudy_night.png" alt="rg">)</td>
+                            <td *ngSwitchCase=3><img style="width: 100%;" src="/assets/images/partly_cloudy_day.png" alt="rg"></td>
                             <td *ngSwitchCase=5>Mist</td>
                             <td *ngSwitchCase=6>Fog</td>
-                            <td *ngSwitchCase=7>Cloudy</td>
+                            <td *ngSwitchCase=7><img style="width: 100%;" src="/assets/images/mostly_cloudy_day_night.png" alt="rg"></td>
                             <td *ngSwitchCase=8>Overcast</td>
-                            <td *ngSwitchCase=12>Light rain</td>
-                            <td *ngSwitchCase=12>Heavy rain shower (night)</td>                            
+                            <td *ngSwitchCase=12><img style="width: 100%;" src="/assets/images/rain_day_night.png" alt="rg"></td>
+                            <td *ngSwitchCase=13>Heavy rain shower (night)</td>                            
                         
                         </div>
                         <!-- <td><img style="height: 50%; width: 30%;" 
@@ -163,7 +163,7 @@
       <div class="container">
           <div class="row col">
               <div class="col-5">
-                  <div [ngSwitch]="weather.periods[0].reading.weatherType">
+                  <div [ngSwitch]="weather.periods[2].reading.weatherType">
                       <div *ngSwitchCase="7"><img style="width: 100%;" src="/assets/images/mostly_cloudy_day_night.png" alt="rg"></div>
                       <div *ngSwitchCase="5"><img style="width: 100%;" src="/assets/images/partly_cloudy_day.png" alt="rg"></div>
                       <div *ngSwitchCase="6"><img style="width: 100%;" src="/assets/images/fair_night.png" alt="rg"></div>
@@ -174,11 +174,11 @@
                       <tbody>
                         <tr>
                           <th scope="row">Humidity</th>
-                          <td>  {{ weather.periods[0].reading.humidity }}%  </td>
+                          <td>  {{ weather.periods[2].reading.humidity }}%  </td>
                         </tr>
                         <tr>
                           <th scope="row">Feels like</th>
-                          <td> {{ weather.periods[0].reading.feelsGoodTemp }} </td>
+                          <td> {{ weather.periods[2].reading.feelsGoodTemp }} </td>
                         </tr>
                         <tr>
                           <th scope="row">Visibility</th>
