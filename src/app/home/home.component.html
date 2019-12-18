@@ -6,7 +6,11 @@
 
     <!-- <div><h3>Ghana</h3></div> -->
     <div><h6><p>Please eat before you sleep tonight</p></h6></div>
-    <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ weather.periods[1].reading.temperature }} °C</h1></div>
+    <div>
+      <h1 style="color:antiquewhite;">
+        <i class="fas fa-thermometer-half">
+
+        </i> {{ weather.periods[1].reading.temperature }} °C</h1></div>
     <!-- <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ mock.periods[0].reading.temperature }} °C</h1></div> -->
 
     <div><h6><p>Pick your umbrella</p></h6></div>
@@ -41,7 +45,7 @@
               <thead>
                   <th>Time</th>
                   <th>Weather</th>
-                  <th>Temp(°C)</th>
+                  <th>Temp</th>
                   <th>Prec.</th>
                   <th>Feels Like(°C)</th>
                 </thead>
@@ -77,7 +81,7 @@
                           class="img-responsive" src="/assets/images/fair_night@2x.png" 
                           alt="RaraS" *ngIf="data.reading.weatherType <= 6"> Cloudy
                         </td> -->
-                      <td>{{data?.reading.temperature}}</td>
+                      <td>{{data?.reading.temperature}} °C</td>
                       <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_40@2x.png" alt="">{{ data.reading.precipitationProb }}</td>
                       <td>{{data.reading.feelsGoodTemp}}</td>
                     </tr>
