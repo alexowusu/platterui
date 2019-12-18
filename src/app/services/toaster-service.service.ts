@@ -16,7 +16,7 @@ export class ToasterServiceService {
 
   Info(title: string, message?: string){
     toastr.info(message, title);
-    console.log("works from info")
+    // console.log("works from info")
   }
 
   Warning(title: string, message?: string){
