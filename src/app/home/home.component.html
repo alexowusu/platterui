@@ -53,17 +53,25 @@
                         alt="RaraS">{{ data.reading.weatherType }}</td> -->
 
                         <div [ngSwitch]="weather.periods[serial]?.reading.weatherType">
-                            <td *ngSwitchCase=0>Clear night</td>
+                            <td *ngSwitchCase=0><img style="width: 100%;" src="/assets/images/clear_night.png" alt="rg"></td>
                             <td *ngSwitchCase=1><img style="width: 100%;" src="/assets/images/clear_day.png" alt="rg"></td>
                             <td *ngSwitchCase=2><img style="width: 100%;" src="/assets/images/partly_cloudy_night.png" alt="rg">)</td>
                             <td *ngSwitchCase=3><img style="width: 100%;" src="/assets/images/partly_cloudy_day.png" alt="rg"></td>
                             <td *ngSwitchCase=5>Mist</td>
-                            <td *ngSwitchCase=6>Fog</td>
+                            <td *ngSwitchCase=6><img style="width: 100%;" src="/assets/images/partly_cloudy_day.png" alt="rg"></td>
                             <td *ngSwitchCase=7><img style="width: 100%;" src="/assets/images/mostly_cloudy_day_night.png" alt="rg"></td>
                             <td *ngSwitchCase=8>Overcast</td>
                             <td *ngSwitchCase=12><img style="width: 100%;" src="/assets/images/rain_day_night.png" alt="rg"></td>
-                            <td *ngSwitchCase=13>Heavy rain shower (night)</td>                            
-                        
+                            <td *ngSwitchCase=13><img style="width: 100%;" src="/assets/images/rain_day_night.png" alt="rg"></td>                            
+                            <td *ngSwitchCase=14><img style="width: 100%;" src="/assets/images/rain_day_night.png" alt="rg"></td>
+                            <td *ngSwitchCase=15><img style="width: 100%;" src="/assets/images/thundershowers_day_night.png" alt="rg"> </td>                            
+                            <td *ngSwitchCase=16><img style="width: 100%;" src="/assets/images/snow_shower.png" alt="rg"> </td>
+                            <td *ngSwitchCase=18><img style="width: 100%;" src="/assets/images/snow_shower.png" alt="rg"> </td>
+                            <td *ngSwitchCase=19><img style="width: 100%;" src="/assets/images/snow_shower.png" alt="rg"> </td>
+                            <td *ngSwitchCase=20><img style="width: 100%;" src="/assets/images/scatered_day_night.png" alt="rg"> </td>
+                            <td *ngSwitchCase=21>Hail </td>
+                            <td *ngSwitchCase=22><img style="width: 100%;" src="/assets/images/snow_shower.png" alt="rg"> </td>
+
                         </div>
                         <!-- <td><img style="height: 50%; width: 30%;" 
                           class="img-responsive" src="/assets/images/fair_night@2x.png" 
