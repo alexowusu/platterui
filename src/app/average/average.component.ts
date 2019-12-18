@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AverageService } from '../services/average.service';
 
 @Component({
   selector: 'app-average',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AverageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private averageService: AverageService) { }
+
+  public averageData : object = {}
 
   ngOnInit() {
+    this.averageService.getSummary().subscribe(data => {
+      this.averageData = data;
+      console.log(data)
+    })
+    console.log("shows from init")
   }
 
 }

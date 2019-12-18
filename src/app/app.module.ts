@@ -17,6 +17,7 @@ import {
   MatCardModule
 } from '@angular/material';
 import { AverageComponent } from './average/average.component';
+
 const config = new AuthServiceConfig([
   {
     id: FacebookLoginProvider.PROVIDER_ID,
