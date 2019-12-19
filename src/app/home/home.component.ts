@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private service: HomeService, private toasterService: ToasterServiceService) { }
 
-  weather;
+  weather:any;
   // = {
   //   elevation:"",
   // locationId:"",
