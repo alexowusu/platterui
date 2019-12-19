@@ -4,6 +4,7 @@ import { LoginComponent } from "../login/login.component";
 import { HomeService } from "../home.service";
 import { ToasterServiceService } from "../services/toaster-service.service";
 import { AverageComponent } from '../average/average.component';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: "app-home",
@@ -152,6 +153,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private service: HomeService,
     private toasterService: ToasterServiceService,
+    private route: ActivatedRoute
     // private avg: AverageComponent
   ) {}
 
@@ -164,10 +166,11 @@ export class HomeComponent implements OnInit {
   // mapUrl = "https://maps.google.com/maps?q=achimota&t=k&z=13&ie=UTF8&iwloc=&output=embed";
   loc: string = "accra";
   avg: AverageComponent
+  weatherNameParam;
 
 
   ngOnInit() {
-    this.service.getData().subscribe(
+    this.service.getDataByLocation(this.route.snapshot.params['id']).subscribe(
       result => {
         this.weather = result;
         console.log(result);
@@ -179,6 +182,11 @@ export class HomeComponent implements OnInit {
         // console.log("name inside: "+  this.name);
         console.log("weather status: " + this.t);
         this.Info(this.weatherStatus + " " + this.name);
+        // console.log("from home,......")
+
+        this.weatherNameParam = this.route.snapshot.params['id'];
+        console.log(this.weatherNameParam)
+
       },
       error => {
         console.log(error);
@@ -193,6 +201,14 @@ export class HomeComponent implements OnInit {
     console.log("oover heeeere" + this.avg.locSearchFormValue)
 
     // this.service.getDataByLocation();
+    // this.route.paramMap.subscribe((params: ParamMap) => {    // alt
+    //   this.weatherNameParam = parseInt(params.get('id')); // grabs the dynamic path para values, string by default 
+    //   console.log(this.weatherNameParam)
+    // });
+
+
+    // this.weatherNameParam = this.route.snapshot.params['id'];
+    // console.log("from home,......")
   }
 
   private hide() {
