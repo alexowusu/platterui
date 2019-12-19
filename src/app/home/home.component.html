@@ -49,7 +49,7 @@
                   <th>Weather</th>
                   <th>Temp</th>
                   <th>Prec.</th>
-                  <th>Feels Like(°C)</th>
+                  <th>Feels Like</th>
                 </thead>
               <tbody>
                   <tr *ngFor = "let data of weather.periods; let serial = index;  ">
@@ -59,13 +59,13 @@
                         alt="RaraS">{{ data.reading.weatherType }}</td> -->
 
                         <div [ngSwitch]="weather.periods[serial]?.reading.weatherType">
-                            <td *ngSwitchCase=0><img style="width: 100%;" src="/assets/images/clear_night.png" alt="rg"></td>
+                            <td *ngSwitchCase=0 ><img style="width: 100%;" src="/assets/images/clear_night.png" alt="rg"></td>
                             <td *ngSwitchCase=1><img style="width: 100%;" src="/assets/images/clear_day.png" alt="rg"></td>
                             <td *ngSwitchCase=2><img style="width: 100%;" src="/assets/images/partly_cloudy_night.png" alt="rg">)</td>
                             <td *ngSwitchCase=3><img style="width: 100%;" src="/assets/images/partly_cloudy_day.png" alt="rg"></td>
                             <td *ngSwitchCase=5>Mist</td>
                             <td *ngSwitchCase=6><img style="width: 100%;" src="/assets/images/partly_cloudy_day.png" alt="rg"></td>
-                            <td *ngSwitchCase=7><img style="width: 100%;" src="/assets/images/mostly_cloudy_day_night.png" alt="rg"></td>
+                            <td *ngSwitchCase="7"  ><img style="width: 100%;" src="/assets/images/mostly_cloudy_day_night.png" alt="rg"></td>
                             <td *ngSwitchCase=8>Overcast</td>
                             <td *ngSwitchCase=12><img style="width: 100%;" src="/assets/images/rain_day_night.png" alt="rg"></td>
                             <td *ngSwitchCase=13><img style="width: 100%;" src="/assets/images/rain_day_night.png" alt="rg"></td>                            
@@ -85,7 +85,7 @@
                         </td> -->
                       <td>{{data?.reading.temperature}} °C</td>
                       <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_40@2x.png" alt="">{{ data.reading.precipitationProb }}</td>
-                      <td>{{data.reading.feelsGoodTemp}}</td>
+                      <td>{{data.reading.feelsGoodTemp}}°C</td>
                     </tr>
               </tbody>
             </table>
