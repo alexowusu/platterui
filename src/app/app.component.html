@@ -25,11 +25,15 @@
                               <a class="navbar-brand">Welcome</a>
                              <span class="navbar-toggler-icon"></span>
                                     <a class="nav-link" href="#">Home
-                                        </a>
+                                        <span class="sr-only">(current)</span></a>
                               </div>
                       </ul>
                       <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                       <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">-->
+                       <input [value]="search1"
+                       ngxTypeahead
+                       [taList]="myLocalList" 
+                       (taSelected)="selectedStatic($event)">
                         <button class="btn btn-outline-success my-2 my-sm-0" ng-click="getData()" routerLink="home">Search</button>
                       </form>
                     </div>

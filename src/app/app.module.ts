@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-
+import { NgxTypeaheadModule } from 'ngx-typeahead';
 import{HttpClientModule} from '@angular/common/http';
 import { HomeService } from './home.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,7 +32,7 @@ export function provideConfig() {
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    LoginComponent,
+    LoginComponent
   
     // ToasterServiceService
   ],
@@ -44,7 +44,8 @@ export function provideConfig() {
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxTypeaheadModule
   ],
   providers: [
     HomeService,
