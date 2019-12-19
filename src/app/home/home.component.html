@@ -11,7 +11,7 @@
       <h1 style="color:antiquewhite;">
         <i class="fas fa-thermometer-half">
 
-        </i> {{ weather['periods[2]'].reading.temperature }} °C</h1></div>
+        </i> {{ weather['periods'][2].reading.temperature }} °C</h1></div>
     <!-- <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ mock.periods[0].reading.temperature }} °C</h1></div> -->
 
     <div><h6><p>Pick your umbrella</p></h6></div>
@@ -140,11 +140,11 @@
                       <tbody>
                         <tr>
                           <th scope="row">Humidity</th>
-                          <td>  {{ weather['periods[2]'].reading.humidity }}%  </td>
+                          <td>  {{ weather['periods'][2].reading.humidity }}%  </td>
                         </tr>
                         <tr>
                           <th scope="row">Feels like</th>
-                          <td> {{ weather['periods[2]'].reading.feelsGoodTemp }} </td>
+                          <td> {{ weather['periods'][2].reading.feelsGoodTemp }} </td>
                         </tr>
                         <tr>
                           <th scope="row">Visibility</th>
@@ -160,7 +160,7 @@
                         </tr>
                         <tr>
                           <th scope="row">UV Index</th>
-                          <td> {{ weather['periods[2]'].reading.MaxUVIndex }} </td>
+                          <td> {{ weather['periods'][2].reading.MaxUVIndex }} </td>
                         </tr>
                       </tbody>
                     </table>
@@ -203,15 +203,15 @@
                     <tbody>
                       <tr>
                         <th scope="row">Wind Direction</th>
-                        <td> {{ weather['periods[2]'].reading.windDirection }} </td>
+                        <td> {{weather['periods'][2].reading.windDirection }} </td>
                       </tr>
                       <tr>
                         <th scope="row">Wind Gust</th>
-                        <td>  {{ weather['periods[2]'].reading.windGust }} Fairly Good</td>
+                        <td>  {{weather['periods'][2].reading.windGust }} Fairly Good</td>
                       </tr>
                       <tr>
                         <th scope="row">Wind Speed</th>
-                        <td> {{ weather['periods[2]'].reading.windSpeed }} kmph</td>
+                        <td> {{weather['periods'][2].reading.windSpeed }} kmph</td>
                       </tr>
                     </tbody>
                   </table>
