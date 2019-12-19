@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
         this.weather = result;
         console.log(result);
 
-         this.name = this.weather['name'];
+        //  this.name = this.weather['name'];
         // this.weatherStatus = this.weather["periods[0]"["reading"["weatherType"]]];
         // this.weatherStatus = this.weather[name];
         // console.log(this.name);
