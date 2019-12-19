@@ -11,9 +11,9 @@
 
 <div class="container" style="padding-left: 40px;">
     <div style="lighting-color: aliceblue;">
-        <form [formGroup]="stateForm">
+        <form  [formGroup]="searchLocationForm" (ngSubmit)="search()">
                 <mat-form-field>
-                  <input type="text" matInput placeholder="search" formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+                  <input type="text" matInput placeholder="search" formControlName="location_name" required [matAutocomplete]="autoGroup">
                     <mat-autocomplete #autoGroup="matAutocomplete">
                       <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
                         <mat-option *ngFor="let name of group.names" [value]="name">
@@ -22,6 +22,8 @@
                     </mat-optgroup>
                   </mat-autocomplete>
                 </mat-form-field>
+                <button class="btn btn-outline-primary btn-sm" type="submit" >Search</button>
+
               </form>
     </div> 
     <div>
