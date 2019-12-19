@@ -1,4 +1,82 @@
-<div class="col">
+<div class="row">
+    <nav id="sidebar" class="op">
+        <div class="sidebar-header bac">
+            <h3>Platter</h3>
+            <strong>BS</strong>
+        </div>
+  
+        <ul class="list-unstyled components op bac">
+            <li class="active">
+                   <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-street-view"></i>
+                      Find
+                </a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">Country</a>
+                    </li>
+                    <li>
+                        <a href="#">County</a>
+                    </li>
+                    <li>
+                        <a href="#">City</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-briefcase"></i>
+                    Help tools
+                </a>
+                <a href= "#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-address-book"></i>
+                    Team ADEPa
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Alex</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/https://www.linkedin.com/in/dawud-ibrahim-ismail-96378713a/']" routerLinkActive="router-link-active" >Dawud</a>
+                    </li>
+                    <li>
+                        <a href="#">Erbynn</a>
+                    </li>
+                    <li>
+                      <a href="#">Patricia</a>
+                  </li>
+                </ul>
+            </li>
+             <li> 
+                <a href="#">
+                    <i class="fas fa-podcast"></i>
+                    Subscribe
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-question"></i>
+                    FAQ
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-paper-plane"></i>
+                    Contact
+                </a>
+            </li>
+        </ul>
+  
+       <ul class="list-unstyled CTAs"> 
+            <li>
+                <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download latest update</a>
+            </li>
+            <li>
+                <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Map</a>
+            </li>
+        </ul> 
+    </nav>
+  <div class="col">
   <div class="row">
   <div class="col-7">
   <div class="grid-auto-rows: auto; col mb-10">
@@ -35,7 +113,7 @@
               <i class=""></i> Forecast</h5>
             <hr class="hr-light">
           </div>
-    
+        </div>
             <!-- <div>
               <div>{{weather.periods[0].reading.weatherType}}</div>
             </div> -->
