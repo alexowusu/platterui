@@ -7,6 +7,30 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- <div class="bg"> -->
+
+         <!-- <div style="lighting-color: aliceblue;">
+                <form [formGroup]="stateForm">
+                        <mat-form-field>
+                          <input type="text" matInput placeholder="search" formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+                            <mat-autocomplete #autoGroup="matAutocomplete">
+                              <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+                                <mat-option *ngFor="let name of group.names" [value]="name">
+                                  {{name}}
+                                </mat-option>
+                            </mat-optgroup>
+                          </mat-autocomplete>
+                        </mat-form-field>
+                      </form>
+           </div>  -->
+           <!-- <div class="container">
+            <form [formGroup]="searchLocationForm"  (ngSubmit)="search()" class="form-inline md-form mr-auto mb-4">
+                <input formControlName="location_name" class="form-control mr-sm-2" type="search"
+                    placeholder="Search for location" aria-label="Search">
+                <button class="btn btn-outline-primary btn-sm" type="submit" >Search</button>
+            </form>
+        </div> -->
+    
+
 <div [ngSwitch]="weather.periods['2']?.reading.weatherType">
   <div *ngSwitchCase="7">
     <div style="background: url('../assets/images/bg12.jpg');">

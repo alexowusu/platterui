@@ -1,14 +1,29 @@
-<div class="container">
+<!-- <div class="container" style="padding-left: 400px;">
         <form [formGroup]="searchLocationForm"  (ngSubmit)="search()" class="form-inline md-form mr-auto mb-4">
-                <!-- <form class="form-inline md-form mr-auto mb-4"> -->
             <input formControlName="location_name" class="form-control mr-sm-2" type="search"
                 placeholder="Search for location" aria-label="Search">
             <button class="btn btn-outline-primary btn-sm" type="submit" >Search</button>
         </form>
-    </div>
+</div> -->
 
+
+    
 
 <div class="container" style="padding-left: 40px;">
+    <div style="lighting-color: aliceblue;">
+        <form [formGroup]="stateForm">
+                <mat-form-field>
+                  <input type="text" matInput placeholder="search" formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+                    <mat-autocomplete #autoGroup="matAutocomplete">
+                      <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+                        <mat-option *ngFor="let name of group.names" [value]="name">
+                          {{name}}
+                        </mat-option>
+                    </mat-optgroup>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+    </div> 
     <div>
         <!-- <h3>Country averages</h3> -->
         <h3>Country averages - <small>(temperature, humidity, wind speed)</small></h3>

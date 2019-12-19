@@ -1,31 +1,39 @@
-import { ToasterServiceService } from './services/toaster-service.service';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider, GoogleLoginProvider } from 'angularx-social-login';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
+import { ToasterServiceService } from "./services/toaster-service.service";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  FacebookLoginProvider,
+  GoogleLoginProvider
+} from "angularx-social-login";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { HomeComponent } from "./home/home.component";
+import { RegisterComponent } from "./register/register.component";
+import { LoginComponent } from "./login/login.component";
 
-import { HttpClientModule } from '@angular/common/http';
-import { HomeService } from './home.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from "@angular/common/http";
+import { HomeService } from "./home.service";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   MatIconModule,
   MatButtonModule,
   MatCardModule
-} from '@angular/material';
-import { AverageComponent } from './average/average.component';
-import { ReactiveFormsModule } from '@angular/forms';
+} from "@angular/material";
+import { AverageComponent } from "./average/average.component";
+import { ReactiveFormsModule } from "@angular/forms";
+import { AngularMaterialModule } from "./angular-material.module";
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+// import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 const config = new AuthServiceConfig([
   {
     id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider('1568107199995366')
+    provider: new FacebookLoginProvider("1568107199995366")
   }
 ]);
-
 
 export function provideConfig() {
   return config;
@@ -36,7 +44,7 @@ export function provideConfig() {
     HomeComponent,
     RegisterComponent,
     LoginComponent,
-    AverageComponent,
+    AverageComponent
     // ToasterServiceService
   ],
   imports: [
@@ -48,7 +56,11 @@ export function provideConfig() {
     MatButtonModule,
     MatCardModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularMaterialModule,
+    FormsModule,
+    AngularMaterialModule,
+    // NgbModule
   ],
   providers: [
     HomeService,
@@ -58,7 +70,7 @@ export function provideConfig() {
     },
     ToasterServiceService
   ],
-  bootstrap: [AppComponent]
-
+  bootstrap: [AppComponent, HomeComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {}
