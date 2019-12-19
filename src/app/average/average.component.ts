@@ -37,54 +37,11 @@ export class AverageComponent implements OnInit {
 
   public locationData = [];
 
-  searchLocationForm = new FormGroup({
-    location_name: new FormControl('')
-  });
+  // searchLocationForm = new FormGroup({
+  //   location_name: new FormControl('')
+  // });
 
-  constructor(private averageService: AverageService,
-     private router: Router, 
-     private _formBuilder: FormBuilder
-    ) { }
-
-  public averageData: object = {}
-  public locSearchFormValue: string; 
-
-
-  ngOnInit() {
-    this.averageService.getSummary().subscribe(data => {
-      this.averageData = data;
-      console.log(data)
-    })
-    console.log("shows from init")
-
-    // this.averageService.currentMessage.subscribe(message => this.locSearchFormValue = message)
-
-    this.stateGroupOptions = this.stateForm.get('stateGroup')!.valueChanges
-    .pipe(
-      startWith(''),
-      map(value => this._filterGroup(value))
-    );
-  }
-
-  onSubmit() {    // () are public by default...so no need to specify if public
-    // console.log(this.searchProjectForm.value.project_name);
-    // this.projectService.getProjectByName(this.searchProjectForm.value.project_name).subscribe(  // always subscribe
-    //   data => {   
-    //     this.projectList = data;    // store in var for display
-    //     console.log(data)   // don't concat with string
-    //   }, 
-    //   error => { console.log(error); }
-    //   )
-  }
-
-  search(){
-    // console.log(this.searchLocationForm.value.location_name);
-    this.locSearchFormValue =  this.searchLocationForm.value.location_name;
-    this.router.navigate(['/home/', this.locSearchFormValue])
-    console.log(this.locSearchFormValue)
-  }
-  
-  stateForm: FormGroup = this._formBuilder.group({
+   stateForm: FormGroup = this._formBuilder.group({
     stateGroup: '',
   });
 
@@ -327,5 +284,50 @@ export class AverageComponent implements OnInit {
     }
     return this.stateGroups;
   }
+
+  constructor(private averageService: AverageService,
+     private router: Router, 
+     private _formBuilder: FormBuilder
+    ) { }
+
+  public averageData: object = {}
+  public locSearchFormValue: string; 
+
+
+  ngOnInit() {
+    this.averageService.getSummary().subscribe(data => {
+      this.averageData = data;
+      console.log(data)
+    })
+    console.log("shows from init")
+
+    // this.averageService.currentMessage.subscribe(message => this.locSearchFormValue = message)
+
+    this.stateGroupOptions = this.stateForm.get('stateGroup')!.valueChanges
+    .pipe(
+      startWith(''),
+      map(value => this._filterGroup(value))
+    );
+  }
+
+  onSubmit() {    // () are public by default...so no need to specify if public
+    // console.log(this.searchProjectForm.value.project_name);
+    // this.projectService.getProjectByName(this.searchProjectForm.value.project_name).subscribe(  // always subscribe
+    //   data => {   
+    //     this.projectList = data;    // store in var for display
+    //     console.log(data)   // don't concat with string
+    //   }, 
+    //   error => { console.log(error); }
+    //   )
+  }
+
+  search(){
+    // console.log(this.searchLocationForm.value.location_name);
+    this.locSearchFormValue =  this.stateForm.value.stateGroup;
+    this.router.navigate(['/home/', this.locSearchFormValue])
+    console.log(this.locSearchFormValue)
+  }
+  
+ 
 }
 
