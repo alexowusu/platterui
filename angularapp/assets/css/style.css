@@ -1,0 +1,40 @@
+
+.bg{
+    align-items: center;
+    justify-content: center;
+    object-fit: cover; 
+    width: 1500px;
+    height: 1500px;
+    /* background-image: url('../images/bg14.jpg'); */
+    background-size: cover;
+    background-position: center;
+}
+.op{
+    opacity: 0.8;
+  filter: alpha(opacity=50);
+}
+.det{
+    background-image: url('../images/scattered_showers_day_night@2x.png');
+}
+.tcloudy{
+background-image: url('../images/scattered_showers_day_night@2x.png');
+}
+.t{
+    position: relative;
+    z-index: 1;
+}
+.sbg .t{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:palegoldenrod center center;
+    opacity: .4;
+    width: 100%;
+    height: 100%;
+}
+.bac{
+    background-color: purple;
+}
