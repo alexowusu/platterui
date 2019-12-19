@@ -31,25 +31,25 @@ export class HomeComponent implements OnInit {
   constructor(private service: HomeService, private toasterService: ToasterServiceService) { }
 
   weather: object = {
-    "elevation":"",
-  "locationId":"",
-  "latitude":"",
-  "longitude":"",
-  "name":"",
-  "county":"",
-  "periods":[{
-    "timestamp":"",
-    "reading":{
-      "temperature":"",
-    "feelsGoodTemp":"",
-    "humidity":"",
-    "MaxUVIndex":"",
-    "precipitationProb":"",
-    "visibility":"",
-    "weatherType":"",
-    "windDirection":"",
-    "windGust":"",
-    "windSpeed":""}}],
+    elevation:"",
+  locationId:"",
+  latitude:"",
+  longitude:"",
+  name:"",
+  county:"",
+  periods:[{
+    timestamp:"",
+    reading:{
+      temperature:"",
+    feelsGoodTemp:"",
+    humidity:"",
+    MaxUVIndex:"",
+    precipitationProb:"",
+    visibility:"",
+    weatherType:"",
+    windDirection:"",
+    windGust:"",
+    windSpeed:""}}],
     }
   name: string;
   weatherStatus: string;
@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
     this.service.getData().subscribe(
       result => {
         this.weather = result;
-        console.log(result);
+        console.log("Result",this.weather);
 
         this.name = this.weather["name"];
         // this.weatherStatus = this.weather["periods[0]"["reading"["weatherType"]]];
