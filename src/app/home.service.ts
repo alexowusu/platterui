@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {Weather}from './weather'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,8 +18,8 @@ export class HomeService {
   
   constructor(private httpClient: HttpClient) { }
 
-  getData(): Observable<object> {
-    return this.httpClient.get<object>(this.apiURL);
+  getData(): Observable<Weather[]> {
+    return this.httpClient.get<Weather[]>(this.apiURL);
     
   
   //  constructor() { }

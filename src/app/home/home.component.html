@@ -58,7 +58,7 @@
                         class="img-responsive" src="/assets/images/fair_night@2x.png" 
                         alt="RaraS">{{ data.reading.weatherType }}</td> -->
 
-                        <div [ngSwitch]="weather.periods?.reading.weatherType">
+                        <div [ngSwitch]="weather.periods[0]?.reading.weatherType">
                             <td *ngSwitchCase=0 ><img style="width: 100%;" src="/assets/images/clear_night.png" alt="rg"></td>
                             <td *ngSwitchCase=1><img style="width: 100%;" src="/assets/images/clear_day.png" alt="rg"></td>
                             <td *ngSwitchCase=2><img style="width: 100%;" src="/assets/images/partly_cloudy_night.png" alt="rg">)</td>
