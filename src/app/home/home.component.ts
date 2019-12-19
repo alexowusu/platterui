@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   name: string;
   weatherStatus: string;
   // t = this.weather['periods[0]']['reading']['humidity'];
-  msg: string = "Raining @ " + this.name;
+  // msg: string = "Raining @ " + this.name;
   // map: string = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.553793177251!2d-0.23769099999999996!3d5.6326808999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9954d603e5b3%3A0xd24eb41c04c54f63!2sturntabl!5e0!3m2!1sen!2sgh!4v1576499402655!5m2!1sen!2sgh"
   // mapUrl = "https://maps.google.com/maps?q=achimota&t=k&z=13&ie=UTF8&iwloc=&output=embed";
   loc: string = "accra";
@@ -48,14 +48,19 @@ export class HomeComponent implements OnInit {
         this.name = this.weather["name"];
         // this.weatherStatus = this.weather["periods[0]"["reading"["weatherType"]]];
         // this.weatherStatus = this.weather[name];
-        // console.log(this.name);
+        console.log("name inside: "+  this.name);
+        this.Info("rain @ " + this.name);
+
       },
-      error => { console.log(error); }
+      error => { console.log(error); },
+      
     );
     this.hide();
     LoginComponent.loggedIn;
 
-    this.Info(this.msg);
+    // console.log("show for info");
+    // console.log(this.name)
+    // this.Info(this.name);
   }
 
   private hide() {

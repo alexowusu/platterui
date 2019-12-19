@@ -47,13 +47,8 @@
               <thead>
                   <th>Time</th>
                   <th>Weather</th>
-<<<<<<< HEAD
-                  <th>Temp(°C)</th>
-                  <th>Prec.(&#37;)</th>
-=======
                   <th>Temp</th>
                   <th>Prec.</th>
->>>>>>> be1a4d947eb6e21077b6c7d9b33ba80f7ecd323f
                   <th>Feels Like(°C)</th>
                 </thead>
               <tbody>
@@ -72,11 +67,6 @@
                             <td *ngSwitchCase=6><img style="width: 100%;" src="/assets/images/partly_cloudy_day.png" alt="rg"></td>
                             <td *ngSwitchCase=7><img style="width: 100%;" src="/assets/images/mostly_cloudy_day_night.png" alt="rg"></td>
                             <td *ngSwitchCase=8>Overcast</td>
-<<<<<<< HEAD
-                            <td *ngSwitchCase=12>Light rain</td>
-                            <td *ngSwitchCase=13>Heavy rain shower (night)</td>                            
-                        
-=======
                             <td *ngSwitchCase=12><img style="width: 100%;" src="/assets/images/rain_day_night.png" alt="rg"></td>
                             <td *ngSwitchCase=13><img style="width: 100%;" src="/assets/images/rain_day_night.png" alt="rg"></td>                            
                             <td *ngSwitchCase=14><img style="width: 100%;" src="/assets/images/rain_day_night.png" alt="rg"></td>
@@ -88,7 +78,6 @@
                             <td *ngSwitchCase=21>Hail </td>
                             <td *ngSwitchCase=22><img style="width: 100%;" src="/assets/images/snow_shower.png" alt="rg"> </td>
 
->>>>>>> be1a4d947eb6e21077b6c7d9b33ba80f7ecd323f
                         </div>
                         <!-- <td><img style="height: 50%; width: 30%;" 
                           class="img-responsive" src="/assets/images/fair_night@2x.png" 
@@ -155,7 +144,7 @@
                         </tr>
                         <tr>
                           <th scope="row">Feels like</th>
-                          <td> {{ weather.periods[2].reading.feelsGoodTemp }} </td>
+                          <td> {{ weather.periods[2].reading.feelsGoodTemp }} °C</td>
                         </tr>
                         <tr>
                           <th scope="row">Visibility</th>
