@@ -17,7 +17,8 @@ export class AverageComponent implements OnInit {
 
   constructor(private averageService: AverageService) { }
 
-  public averageData : object = {}
+  public averageData: object = {}
+  public locSearchFormValue: string; 
 
   ngOnInit() {
     this.averageService.getSummary().subscribe(data => {
@@ -39,7 +40,10 @@ export class AverageComponent implements OnInit {
   }
 
   search(){
-    console.log(this.searchLocationForm.value.location_name)
+    // console.log(this.searchLocationForm.value.location_name);
+    this.locSearchFormValue =  this.searchLocationForm.value.location_name;
+    console.log(this.locSearchFormValue)
   }
 
 }
+

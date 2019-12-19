@@ -3,7 +3,7 @@ import { AppComponent } from "../app.component";
 import { LoginComponent } from "../login/login.component";
 import { HomeService } from "../home.service";
 import { ToasterServiceService } from "../services/toaster-service.service";
-import * as moment from "moment";
+import { AverageComponent } from '../average/average.component';
 
 @Component({
   selector: "app-home",
@@ -148,9 +148,11 @@ export class HomeComponent implements OnInit {
   // location = "Pembrey Sands"
   // this.weather["name"]
 
+
   constructor(
     private service: HomeService,
-    private toasterService: ToasterServiceService
+    private toasterService: ToasterServiceService,
+    // private avg: AverageComponent
   ) {}
 
   weather: object = {};
@@ -161,6 +163,8 @@ export class HomeComponent implements OnInit {
   // map: string = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.553793177251!2d-0.23769099999999996!3d5.6326808999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9954d603e5b3%3A0xd24eb41c04c54f63!2sturntabl!5e0!3m2!1sen!2sgh!4v1576499402655!5m2!1sen!2sgh"
   // mapUrl = "https://maps.google.com/maps?q=achimota&t=k&z=13&ie=UTF8&iwloc=&output=embed";
   loc: string = "accra";
+  avg: AverageComponent
+
 
   ngOnInit() {
     this.service.getData().subscribe(
@@ -186,6 +190,7 @@ export class HomeComponent implements OnInit {
     // console.log("show for info");
     // console.log(this.name)
     // this.Info(this.name);
+    console.log("oover heeeere" + this.avg.locSearchFormValue)
   }
 
   private hide() {
