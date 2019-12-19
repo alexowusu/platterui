@@ -191,6 +191,8 @@ export class HomeComponent implements OnInit {
     // console.log(this.name)
     // this.Info(this.name);
     console.log("oover heeeere" + this.avg.locSearchFormValue)
+
+    // this.service.getDataByLocation();
   }
 
   private hide() {

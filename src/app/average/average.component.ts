@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AverageService } from '../services/average.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-average',
@@ -15,7 +17,7 @@ export class AverageComponent implements OnInit {
     location_name: new FormControl('')
   });
 
-  constructor(private averageService: AverageService) { }
+  constructor(private averageService: AverageService, private router: Router) { }
 
   public averageData: object = {}
   public locSearchFormValue: string; 
@@ -26,6 +28,8 @@ export class AverageComponent implements OnInit {
       console.log(data)
     })
     console.log("shows from init")
+
+    // this.averageService.currentMessage.subscribe(message => this.locSearchFormValue = message)
   }
 
   onSubmit() {    // () are public by default...so no need to specify if public
@@ -42,6 +46,7 @@ export class AverageComponent implements OnInit {
   search(){
     // console.log(this.searchLocationForm.value.location_name);
     this.locSearchFormValue =  this.searchLocationForm.value.location_name;
+    this.router.navigate(['/home/', this.locSearchFormValue])
     console.log(this.locSearchFormValue)
   }
 

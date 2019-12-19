@@ -1,9 +1,9 @@
 <div class="container">
-        <form [formGroup]="searchLocationForm" (ngSubmit)="onSubmit()" (click)="search()" class="form-inline md-form mr-auto mb-4">
+        <form [formGroup]="searchLocationForm"  (ngSubmit)="search()" class="form-inline md-form mr-auto mb-4">
                 <!-- <form class="form-inline md-form mr-auto mb-4"> -->
             <input formControlName="location_name" class="form-control mr-sm-2" type="search"
                 placeholder="Search for location" aria-label="Search">
-            <button class="btn btn-outline-primary btn-sm" type="submit" [routerLink]="['/home/', 2]">Search</button>
+            <button class="btn btn-outline-primary btn-sm" type="submit" >Search</button>
         </form>
     </div>
 
