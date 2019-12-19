@@ -12,7 +12,7 @@ export class HomeService {
   constructor(private httpClient: HttpClient) { }
 
   getData(): Observable<object> {
-    return this.httpClient.get(this.apiURL);
+    return this.httpClient.get<object>(this.apiURL);
   
   //  constructor() { }
 }
