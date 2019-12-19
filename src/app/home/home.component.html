@@ -140,7 +140,7 @@
                       <tbody>
                         <tr>
                           <th scope="row">Humidity</th>
-                          <td>  {{ weather['periods[0]']?.reading.humidity }}%  </td>
+                          <td>  {{ weather.periods[0]?.reading.humidity }}%  </td>
                         </tr>
                         <tr>
                           <th scope="row">Feels like</th>
@@ -160,7 +160,7 @@
                         </tr>
                         <tr>
                           <th scope="row">UV Index</th>
-                          <td> {{ weather.periods[0]?.reading.MaxUVIndex }} </td>
+                          <td> {{ weather.periods[0].reading.MaxUVIndex }} </td>
                         </tr>
                       </tbody>
                     </table>

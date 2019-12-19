@@ -4,6 +4,7 @@ import { LoginComponent } from '../login/login.component';
 import { HomeService } from '../home.service';
 import { ToasterServiceService } from '../services/toaster-service.service';
 import * as moment from 'moment';
+import { Weather } from '../weather';
 
 
 @Component({
@@ -30,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private service: HomeService, private toasterService: ToasterServiceService) { }
 
-  weather;
+  weather: Weather;
   
   // = {
   //   elevation:"",

@@ -18,8 +18,8 @@ export class HomeService {
   
   constructor(private httpClient: HttpClient) { }
 
-  getData(): Observable<Weather[]> {
-    return this.httpClient.get<Weather[]>(this.apiURL);
+  getData(): Observable<Weather> {
+    return this.httpClient.get<Weather>(this.apiURL);
     
   
   //  constructor() { }
