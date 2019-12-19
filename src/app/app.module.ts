@@ -17,6 +17,7 @@ import {
   MatCardModule
 } from '@angular/material';
 import { AverageComponent } from './average/average.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const config = new AuthServiceConfig([
   {
@@ -46,7 +47,8 @@ export function provideConfig() {
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     HomeService,
