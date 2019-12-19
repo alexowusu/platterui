@@ -8,13 +8,16 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
-import{HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { HomeService } from './home.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatIconModule,
   MatButtonModule,
-  MatCardModule } from '@angular/material';
+  MatCardModule
+} from '@angular/material';
+import { AverageComponent } from './average/average.component';
+
 
 const config = new AuthServiceConfig([
   {
@@ -33,7 +36,7 @@ export function provideConfig() {
     HomeComponent,
     RegisterComponent,
     LoginComponent,
-  
+    AverageComponent,
     // ToasterServiceService
   ],
   imports: [
@@ -49,12 +52,12 @@ export function provideConfig() {
   providers: [
     HomeService,
     {
-    provide: AuthServiceConfig,
-    useFactory: provideConfig
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
     },
     ToasterServiceService
   ],
   bootstrap: [AppComponent]
-  
+
 })
 export class AppModule { }
