@@ -8,7 +8,7 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- <div class="bg"> -->
 
-         <!-- <div style="lighting-color: aliceblue;">
+<!-- <div style="lighting-color: aliceblue;">
                 <form [formGroup]="stateForm">
                         <mat-form-field>
                           <input type="text" matInput placeholder="search" formControlName="stateGroup" required [matAutocomplete]="autoGroup">
@@ -22,25 +22,37 @@
                         </mat-form-field>
                       </form>
            </div>  -->
-           <!-- <div class="container">
+<!-- <div class="container">
             <form [formGroup]="searchLocationForm"  (ngSubmit)="search()" class="form-inline md-form mr-auto mb-4">
                 <input formControlName="location_name" class="form-control mr-sm-2" type="search"
                     placeholder="Search for location" aria-label="Search">
                 <button class="btn btn-outline-primary btn-sm" type="submit" >Search</button>
             </form>
         </div> -->
-    
+
+<style>
+  .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+  #sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 200vh;
+  }
+
+  #sidebar.active {
+    margin-left: -250px;
+  }
+</style>
 
 <div [ngSwitch]="weather.periods['2']?.reading.weatherType">
   <div *ngSwitchCase="7">
     <div style="background: url('../assets/images/bg12.jpg');">
       <!-- content start -->
 
-      
-
       <div class="wrapper col">
-
-
         <div>
           <!-- Sidebar  -->
           <nav id="sidebar" class="op">
@@ -62,21 +74,14 @@
                 </a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                    <a href="#">Country</a>
-                  </li>
-                  <li>
-                    <a href="#">County</a>
-                  </li>
-                  <li>
-                    <a href="#">City</a>
+                    <a [routerLink]="['/average']" routerLinkActive="active"
+                      >Country</a
+                    >
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#">
-                  <i class="fas fa-briefcase"></i>
-                  Help tools
-                </a>
+                
                 <a
                   href="#pageSubmenu"
                   data-toggle="collapse"
@@ -101,45 +106,9 @@
                   </li>
                 </ul>
               </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-podcast"></i>
-                  Subscribe
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-question"></i>
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-paper-plane"></i>
-                  Contact
-                </a>
-              </li>
             </ul>
-
-            <ul class="list-unstyled CTAs">
-              <li>
-                <a
-                  href="https://bootstrapious.com/tutorial/files/sidebar.zip"
-                  class="download"
-                  >Download latest update</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://bootstrapious.com/p/bootstrap-sidebar"
-                  class="article"
-                  >Map</a>
-              </li>
-            </ul>
-          </nav> 
+          </nav>
         </div>
-
-        
 
         <router-outlet></router-outlet>
 
@@ -205,7 +174,7 @@
             <!-- Sidebar  -->
             <nav id="sidebar" class="op">
               <div class="sidebar-header bac">
-                <h3>Platter</h3>
+                <h3>Platter...</h3>
                 <strong>BS</strong>
               </div>
 
@@ -223,12 +192,6 @@
                   <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
                       <a href="#">Country</a>
-                    </li>
-                    <li>
-                      <a href="#">County</a>
-                    </li>
-                    <li>
-                      <a href="#">City</a>
                     </li>
                   </ul>
                 </li>
