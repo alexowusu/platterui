@@ -14,37 +14,43 @@
         </i> {{ weather.periods[0]?.reading.temperature }} °C</h1></div>
     <!-- <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ mock.periods[0].reading.temperature }} °C</h1></div> -->
 
-    <div><h6><p>Pick your umbrella</p></h6></div>
-    <!-- <div><h6>There will be heavy rainfall from dawn to evening.</h6></div> -->
-    <div><h6><p>View map for location</p></h6></div>
+        </div>
+        <!-- <div><h1 style="color:antiquewhite;"><i class="fas fa-thermometer-half"></i> {{ mock.periods[0].reading.temperature }} °C</h1></div> -->
 
-    <!-- <button type="button" class="btn btn-outline-success" (click)="Info(name)">Trigger</button> -->
+        <div>
+          <h6><p>Pick your umbrella</p></h6>
+        </div>
+        <!-- <div><h6>There will be heavy rainfall from dawn to evening.</h6></div> -->
+        <!-- <div><h6><p>View map for location</p></h6></div> -->
 
-  </div>
-</div>
-  <div class="col-5">
-    <!-- <p>{{weather.name}}</p> -->
+        <!-- <button type="button" class="btn btn-outline-success" (click)="Info(name)">Trigger</button> -->
+      </div>
+    </div>
+    <div class="col-5">
+      <!-- <p>{{weather.name}}</p> -->
       <!-- <iframe src="https://maps.google.com/maps?q= + {{weather.name}} + &t=k&z=13&ie=UTF8&iwloc=&output=embed" width="350" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
-  </div>
-  <div class=" col-6" style="margin-top: 20px; display: flex;flex-direction: row;">
+    </div>
+    <div
+      class=" col-6"
+      style="margin-top: 20px; display: flex;flex-direction: row;"
+    >
       <div class="grid-auto-rows: auto;">
-      <!--Form-->
-      <div class="card wow fadeInRight op" data-wow-delay="0.3s">
-        <div class="card-body">
-          <!--Header-->
-          <div class="text-center">
-            <h5 class="white-text">
-              <i class=""></i> Forecast</h5>
-            <hr class="hr-light">
-          </div>
-    
+        <!--Form-->
+        <div class="card wow fadeInRight op" data-wow-delay="0.3s">
+          <div class="card-body">
+            <!--Header-->
+            <div class="text-center">
+              <h5 class="white-text"><i class=""></i> Forecast</h5>
+              <hr class="hr-light" />
+            </div>
+
             <!-- <div>
               <div>{{weather.periods[0].reading.weatherType}}</div>
             </div> -->
-    
-          
-          <table class="table">
+
+            <table class="table">
               <thead>
+
                   <th>Time</th>
                   <th>Weather</th>
                   <th>Temp</th>
@@ -52,9 +58,9 @@
                   <th>Feels Like</th>
                 </thead>
               <tbody>
-                  <tr *ngFor = "let data of weather.periods; let serial = index;  ">
-                      <th scope="row">{{data?.timestamp | slice:11:16}}</th>
-                      <!-- <td><img style="height: 50%; width: 30%;" 
+                <tr *ngFor="let data of weather.periods; let serial = index">
+                  <th scope="row">{{ data?.timestamp | slice: 11:16 }}</th>
+                  <!-- <td><img style="height: 50%; width: 30%;" 
                         class="img-responsive" src="/assets/images/fair_night@2x.png" 
                         alt="RaraS">{{ data.reading.weatherType }}</td> -->
 
@@ -87,14 +93,16 @@
                       <td><img style="height: 50%; width: 50%;" class="img-responsive" src="/assets/images/rain_ico_40@2x.png" alt="">{{ data.reading.precipitationProb }}</td>
                       <td>{{data?.reading.feelsGoodTemp}}°C</td>
                     </tr>
+
               </tbody>
             </table>
+          </div>
         </div>
       </div>
-  </div>
-  <!-- p-3 mb-2 bg-transparent white-text -->
-  <!-- <div class="col-md-6 col-xl-5 mb-4 "> -->
+      <!-- p-3 mb-2 bg-transparent white-text -->
+      <!-- <div class="col-md-6 col-xl-5 mb-4 "> -->
       <div class="grid-auto-rows: auto; col row-2">
+      
       <!--Form-->
     <div class="">
       <div class="card wow fadeInRight op" data-wow-delay="0.3s">
@@ -215,24 +223,75 @@
                       </tr>
                     </tbody>
                   </table>
+                  <hr class="hr-light mt-1" />
+                </div>
+              </div>
             </div>
           </div>
-      </div>
-    </div>
-          <hr class="hr-light mt-1">
-          <table class="table">
-              <tbody>
-                  The wind is strong in the Northern belts.
-                </tbody>
-                </table>
-                <hr class="hr-light mt-1">
+
+          <div style="margin-top: 15px; display: flex;flex-direction: row;">
+            <div class="card wow fadeInRight op" data-wow-delay="0.3s">
+              <div class="card-body">
+                <!--Header-->
+                <div class="text-center">
+                  <h5 class="white-text"><i class=""></i>Wind and Direction</h5>
+                  <hr class="hr-light" />
+                </div>
+                <!--Body-->
+                <div class="wrapper">
+                  <div class="md-form">
+                    <div
+                      class="card wow fadeInRight bg-transparent"
+                      style="width: 25rem; height: 9rem;"
+                      data-wow-delay="0.3s"
+                    >
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <table class="table">
+                              <tbody>
+                                <tr>
+                                  <th scope="row">Wind Direction</th>
+                                  <td>
+                                    {{
+                                      weather.periods[0].reading.windDirection
+                                    }}
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Wind Gust</th>
+                                  <td>
+                                    {{ weather.periods[0].reading.windGust }}
+                                    Fairly Good
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Wind Speed</th>
+                                  <td>
+                                    {{ weather.periods[0].reading.windSpeed }}
+                                    kmph
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="hr-light mt-1" />
+                    <table class="table">
+                      <tbody>
+                        The wind is strong in the Northern belts.
+                      </tbody>
+                    </table>
+                    <hr class="hr-light mt-1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
   </div>
 </div>
