@@ -9,7 +9,7 @@ import { AverageComponent } from './average/average.component';
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'home/:id', component: HomeComponent},
-  // {path: 'home', component: HomeComponent},
+  {path: 'home', redirectTo: "/average", pathMatch: "full"},
   {path: 'register', component: RegisterComponent},
   // To redirect the app to automatically launch from the login page
   {path: '', redirectTo: "/login", pathMatch: "full"},
