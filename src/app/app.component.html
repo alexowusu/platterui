@@ -39,7 +39,7 @@
   #sidebar {
     min-width: 250px;
     max-width: 250px;
-    min-height: 200vh;
+    min-height: 150vh;
   }
 
   #sidebar.active {
@@ -63,21 +63,12 @@
 
             <ul class="list-unstyled components op bac">
               <li class="active">
-                <a
-                  href="#homeSubmenu"
-                  data-toggle="collapse"
-                  aria-expanded="false"
-                  class="dropdown-toggle"
-                >
-                  <i class="fas fa-street-view"></i>
-                  Find
-                </a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                    <a routerLink="/average" routerLinkActive="active"
-                      >Country</a
-                    >
+                    <a>Country</a>
                   </li>
+
+
                 </ul>
               </li>
               <li>
@@ -103,6 +94,9 @@
                   <li>
                     <a href="#">Patricia</a>
                   </li>
+                  <li>
+                      <a href="#">Dawud</a>
+                    </li>
                 </ul>
               </li>
             </ul>
@@ -224,6 +218,7 @@
           </div>
 
           <router-outlet></router-outlet>
+          
 
           <!-- content end -->
         </div>
