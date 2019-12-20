@@ -5,6 +5,7 @@ import { HomeService } from "../home.service";
 import { ToasterServiceService } from "../services/toaster-service.service";
 import { AverageComponent } from '../average/average.component';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Weather } from '../interfaces/weather';
 
 @Component({
   selector: "app-home",
@@ -157,7 +158,8 @@ export class HomeComponent implements OnInit {
     // private avg: AverageComponent
   ) {}
 
-  weather: object = {};
+  // weather: object = {};
+  weather: Weather;
   name: string;
   weatherStatus: string;
   t = this.mock['name'];
