@@ -198,7 +198,7 @@ export class HomeComponent implements OnInit {
     // console.log("show for info");
     // console.log(this.name)
     // this.Info(this.name);
-    console.log("oover heeeere" + this.avg.locSearchFormValue)
+    // console.log("oover heeeere" + this.avg.locSearchFormValue)
 
     // this.service.getDataByLocation();
     // this.route.paramMap.subscribe((params: ParamMap) => {    // alt

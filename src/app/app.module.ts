@@ -45,7 +45,6 @@ export function provideConfig() {
     RegisterComponent,
     LoginComponent,
     AverageComponent
-    // ToasterServiceService
   ],
   imports: [
     BrowserModule,
@@ -59,7 +58,6 @@ export function provideConfig() {
     ReactiveFormsModule,
     AngularMaterialModule,
     FormsModule,
-    AngularMaterialModule,
     // NgbModule
   ],
   providers: [
@@ -70,7 +68,7 @@ export function provideConfig() {
     },
     ToasterServiceService
   ],
-  bootstrap: [AppComponent, HomeComponent],
+  bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
