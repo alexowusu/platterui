@@ -21,4 +21,6 @@ export class HomeService {
   getDataByLocation(name: string): Observable<object> {
     return this.httpClient.get(this.locationURL + name);
   }
+
+  private notifyUrl: string = "";
 }
