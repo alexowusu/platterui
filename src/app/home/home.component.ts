@@ -1,10 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { AppComponent } from "../app.component";
-import { LoginComponent } from "../login/login.component";
-import { HomeService } from "../home.service";
-import { ToasterServiceService } from "../services/toaster-service.service";
+import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
+import { LoginComponent } from '../login/login.component';
+import { HomeService } from '../home.service';
+import { ToasterServiceService } from '../services/toaster-service.service';
+import { Weather } from '../weather';
 import { AverageComponent } from '../average/average.component';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+
 
 @Component({
   selector: "app-home",
@@ -150,6 +152,7 @@ export class HomeComponent implements OnInit {
   // this.weather["name"]
 
 
+
   constructor(
     private service: HomeService,
     private toasterService: ToasterServiceService,
@@ -157,7 +160,9 @@ export class HomeComponent implements OnInit {
     // private avg: AverageComponent
   ) {}
 
-  weather: object = {};
+//   weather: object = {};
+ weather: Weather;
+
   name: string;
   weatherStatus: string;
   t = this.mock['name'];
@@ -175,9 +180,8 @@ export class HomeComponent implements OnInit {
         this.weather = result;
         console.log(result);
 
-        this.name = this.weather["name"];
-        // this.weatherStatus = this.weather["elevation"]
-        // this.weatherStatus = this.mock["periods[0]"["reading"["weatherType"]]];
+         this.name = this.weather['name'];
+        // this.weatherStatus = this.weather["periods[0]"["reading"["weatherType"]]];
         // this.weatherStatus = this.weather[name];
         // console.log("name inside: "+  this.name);
         console.log("weather status: " + this.t);

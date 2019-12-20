@@ -28,6 +28,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 // import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
+
 const config = new AuthServiceConfig([
   {
     id: FacebookLoginProvider.PROVIDER_ID,

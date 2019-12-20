@@ -14,7 +14,6 @@ const routes: Routes = [
   // To redirect the app to automatically launch from the login page
   {path: '', redirectTo: "/login", pathMatch: "full"},
   {path: 'average', component: AverageComponent},
-
 ];
 
 @NgModule({
